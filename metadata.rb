@@ -1,12 +1,12 @@
 name              "python"
-maintainer        "Noah Kantrowitz"
-maintainer_email  "noah@coderanger.net"
+maintainer        "Opscode, Inc."
+maintainer_email  "cookbooks@opscode.com"
 license           "Apache 2.0"
 description       "Installs Python, pip and virtualenv. Includes LWRPs for managing Python packages with `pip` and `virtualenv` isolated Python environments."
-version           "1.4.7"
+version           "1.2.1"
 
 depends           "build-essential"
-depends           "yum-epel"
+depends           "yum"
 
 recipe "python", "Installs python, pip, and virtualenv"
 recipe "python::package", "Installs python using packages."
