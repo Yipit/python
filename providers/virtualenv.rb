@@ -42,7 +42,16 @@ action :create do
     new_resource.updated_by_last_action(true)
   end
 
-  python_pip "Install Venv pip" do
+  python_pip "Install Venv Setuptools" do
+    package_name "setuptools"
+    user new_resource.owner if new_resource.owner
+    group new_resource.group if new_resource.group
+    action :install
+    version node['python']['setuptools_version']
+    virtualenv new_resource.path
+  end
+
+  python_pip "Venv pip" do
     package_name "pip"
     user new_resource.owner if new_resource.owner
     group new_resource.group if new_resource.group
