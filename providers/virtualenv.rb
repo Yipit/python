@@ -41,6 +41,16 @@ action :create do
     end
     new_resource.updated_by_last_action(true)
   end
+
+  python_pip "Install Venv pip" do
+    package_name "pip"
+    user new_resource.owner if new_resource.owner
+    group new_resource.group if new_resource.group
+    action :install
+    version "1.5.6"
+    virtualenv new_resource.path
+  end
+
 end
 
 action :delete do
