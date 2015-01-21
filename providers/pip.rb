@@ -120,7 +120,7 @@ def current_installed_version
       out = pattern.match(line)
     end
     out.nil? ? nil : out[1]
-  rescue Mixlib::ShellOut::ShellCommandFailed
+  rescue Errno::ENOENT
   end
 end
 
