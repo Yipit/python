@@ -42,6 +42,11 @@ default['python']['make_options'] = %W{install}
 default['python']['pip_location'] = "#{node['python']['prefix_dir']}/bin/pip"
 default['python']['virtualenv_location'] = "#{node['python']['prefix_dir']}/bin/virtualenv"
 default['python']['setuptools_version'] = "7.0" # defaults to latest
-default['python']['virtualenv_version'] = nil
 default['python']['distribute_version'] = "0.7.3"
 default['python']['pip_version'] = "1.5.6"
+case platform_version
+when "16.04"
+    default['python']['virtualenv_version'] = '15.0.2'
+else
+    default['python']['virtualenv_version'] = nil
+end
