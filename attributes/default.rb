@@ -46,7 +46,7 @@ default['python']['distribute_version'] = "0.7.3"
 default['python']['pip_version'] = "1.5.6"
 case platform_version
 when "16.04"
-    default['python']['virtualenv_version'] = '15.0.2'
+    override['python']['virtualenv_version'] = '15.0.2'
 else
     default['python']['virtualenv_version'] = nil
 end
