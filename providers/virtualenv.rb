@@ -56,7 +56,7 @@ action :create do
     user new_resource.owner if new_resource.owner
     group new_resource.group if new_resource.group
     action :install
-    version "1.5.6"
+    version node['python']['pip_version']
     virtualenv new_resource.path
   end
 

@@ -54,5 +54,5 @@ end
 
 python_pip 'pip' do
   action :install
-  version "1.5.6"
+  version node['python']['pip_version']
 end
