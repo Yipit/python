@@ -73,7 +73,7 @@ action :delete do
 end
 
 def load_current_resource
-  @current_resource = Chef::Resource::PythonVirtualenv.new(new_resource.name)
+  @current_resource = Chef::Resource::resource_for_node(:python_virtualenv, node).new(new_resource.name)
   @current_resource.path(new_resource.path)
 
   if exists?
