@@ -20,8 +20,8 @@
 
 default['python']['install_method'] = 'package'
 
-if python['install_method'] == 'package'
-  case platform
+if node['python']['install_method'] == 'package'
+  case node['platform']
   when "smartos"
     default['python']['prefix_dir']         = '/opt/local'
   else
